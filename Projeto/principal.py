@@ -1,16 +1,18 @@
-# -*- coding: utf-8 -*-
+# -*- coding: iso8859-1 -*-
 
 import menu
-import alunos
+import automoveis
 import util
 
 
 # nome dos ficheiros
-fxAlunos = "fxAlunos.dat"
+fxAutos = "fxAutos.dat"
+fxClientes = "fxClientes.dat"
 
 def ler_ficheiros():
 	# adicionar todos ficheiros a ler
-	alunos.listaAlunos = util.ler_ficheiro(fxAlunos)
+	automoveis.listaAutos = util.ler_ficheiro(fxAutos)
+     #alunos.listaAlunos = util.ler_ficheiro(fxClientes)
 
 
 def escrever_ficheiros():

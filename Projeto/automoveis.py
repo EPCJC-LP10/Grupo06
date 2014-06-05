@@ -5,15 +5,15 @@ from collections import namedtuple
 import menu
 
 
-alunoReg = namedtuple("alunoReg", "id, nome")
-listaAlunos = []
+alunoReg = namedtuple("automovelReg", "id, nome")
+listaAutos = []
 
 
 
 def encontrar_posicao(codigo):
     pos = -1
-    for i in range (len(listaAlunos)):
-        if listaAlunos[i].id == codigo:
+    for i in range (len(listaAutos)):
+        if listaAutos[i].id == codigo:
             pos = i
             break
                             
@@ -26,14 +26,14 @@ def inserir_aluno():
     pos = encontrar_posicao(cod)
 
     if pos >= 0:
-        print "CÛdigo j· existe"
+        print "C√≥digo j√° existe"
         return
 
     #ler dados
     nome = raw_input("Qual o nome? ")
     
     registo = alunoReg(cod, nome)
-    listaAlunos.append(registo)
+    listaAutos.append(registo)
 
 
 def pesquisar_aluno():
@@ -42,45 +42,45 @@ def pesquisar_aluno():
     pos = encontrar_posicao(cod)
 
     if pos == -1:
-        print "N„o existe aluno com esse cÛdigo"
+        print "N√£o existe aluno com esse c√≥digo"
         return
 
-    print "CÛdigo: ", listaAlunos[pos].id
-    print "Nome: ", listaAlunos[pos].nome
+    print "C√≥digo: ", listaAutos[pos].id
+    print "Nome: ", listaAutos[pos].nome
     
 
 
 def listar_alunos():
-    for i in range (len(listaAlunos)):
-        print "CÛdigo: ", listaAlunos[i].id
-        print "Nome: ", listaAlunos[i].nome
+    for i in range (len(listaAutos)):
+        print "C√≥digo: ", listaAutos[i].id
+        print "Nome: ", listaAutos[i].nome
         
   
 
 def eliminar_aluno():
-    cod = input ("CÛdigo do aluno a eliminar --> ")
+    cod = input ("C√≥digo do aluno a eliminar --> ")
     pos = encontrar_posicao(cod)
 
     if pos == -1:
-        print "N„o existe aluno com esse cÛdigo"
+        print "N√£o existe aluno com esse c√≥digo"
         return
 
-    # TODO: Confirmar eliminaÁ„o
-    listaAlunos.pop(pos)
+    # TODO: Confirmar elimina√ß√£o
+    listaAutos.pop(pos)
 
 
     
 def alterar_aluno():
-    cod = input ("CÛdigo do aluno a alterar --> ")
+    cod = input ("C√≥digo do aluno a alterar --> ")
     pos = encontrar_posicao(cod)
 
     if pos == -1:
-        print "N„o existe aluno com esse cÛdigo"
+        print "N√£o existe aluno com esse c√≥digo"
         return
 
-    # sÛ altera o nome
+    # s√≥ altera o nome
     novonome = raw_input("Qual o nome? ")
-    listaAlunos[pos] = listaAlunos[pos]._replace(nome=novonome)
+    listaAutos[pos] = listaAutos[pos]._replace(nome=novonome)
 
 
 
@@ -110,4 +110,4 @@ def gerir():
 
 
 if __name__ == "__main__":
-    print "Este programa n„o deve ser executado diretamente"
+    print "Este programa n√£o deve ser executado diretamente"

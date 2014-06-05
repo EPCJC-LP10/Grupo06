@@ -1,11 +1,11 @@
-# -*- coding: utf-8 -*-
+# -*- coding: iso8859-1 -*-
 
 def principal():
     print
     print " **** MENU ****** "
     print
-    print "   1. Gestão de Alunos"
-    print "   2. Registar Presença (não implementado)"
+    print "   1. Gestão de Automóveis"
+    print "   2. Gestão de Clientes"
     print 
     print "   0. Sair"
     print 
@@ -14,9 +14,9 @@ def principal():
     return op
 
 
-def alunos():
+def automovel():
     print
-    print " *** Menu Alunos **** "
+    print " *** Menu Automoveis **** "
     print
     print "1. Inserir novo aluno"
     print "2. Listar todos alunos"
