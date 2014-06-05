@@ -5,7 +5,7 @@ from collections import namedtuple
 import menu
 
 
-alunoReg = namedtuple("automovelReg", "id, nome")
+AutomoveisReg = namedtuple("automovelReg", "id, marca, modelo, cor, cilindrada, ano_aquisicao, matricula, valor_aluguer_por_dia")
 listaAutos = []
 
 
@@ -20,49 +20,70 @@ def encontrar_posicao(codigo):
     return pos
 
 
-def inserir_aluno():
-    cod = input("Qual o codigo? ")
+def inserir_Autos():
+    cod = input("Qual o id? ")
 
     pos = encontrar_posicao(cod)
 
     if pos >= 0:
-        print "Código já existe"
+        print "id já existe"
         return
 
     #ler dados
-    nome = raw_input("Qual o nome? ")
+    marca= raw_input("Qual a marca?")
+    modelo= raw_input("Qual é o modelo")
+    cor= raw_input("Qual a cor?")
+    cilindrada= raw_input("Qual a cilindrada")
+    ano_aquisicao= raw_input("Qual o ano de aquisição?")
+    matricula= raw_input("Qual a matricula?")
+    valor_aluguer_por_dia= raw_input ("Qual o ano de aquisição?")
     
-    registo = alunoReg(cod, nome)
+    
+    
+    registo = AutomoveisReg(cod, marca, modelo, cor, cilindrada, ano_aquisicao, matricula, valor_aluguer_por_dia)
     listaAutos.append(registo)
 
 
-def pesquisar_aluno():
-    cod = input("Qual o codigo do aluno a pesquisar? ")
+def pesquisar_Autos():
+    cod = input("Qual o id do automovel a pesquisar? ")
 
     pos = encontrar_posicao(cod)
 
     if pos == -1:
-        print "Não existe aluno com esse código"
+        print "Não existem automoveis com esse código"
         return
 
     print "Código: ", listaAutos[pos].id
-    print "Nome: ", listaAutos[pos].nome
+    print "marca ", listaAutos[pos].marca
+    print "modelo",listaAutos[pos].modelo
+    print "cor",listaAutos[pos].cor
+    print "cilindrada",listaAutos[pos].cilindrada
+    print "matricula",listaAutos[pos].matricula
+    print "ano_aquisicao",listaAutos[pos].ano_aquisicao
+    print "valor_aluguer_por_dia",listaAutos[pos].valor_aluguer_por_dia
     
 
 
-def listar_alunos():
+def listar_Autos():
     for i in range (len(listaAutos)):
         print "Código: ", listaAutos[i].id
-        print "Nome: ", listaAutos[i].nome
+        print "marca ", listaAutos[i].marca
+        print "modelo",listaAutos[i].modelo
+        print "cor",listaAutos[i].cor
+        print "cilindrada",listaAutos[i].cilindrada
+        print "matricula",listaAutos[i].matricula
+        print "ano_aquisicao",listaAutos[i].ano_aquisicao
+        print "valor_aluguer_por_dia",listaAutos[i].valor_aluguer_por_dia
+        
         
   
 
-def eliminar_aluno():
-    cod = input ("Código do aluno a eliminar --> ")
+def eliminar_Autos():
+    cod = input ("Código do automovel a eliminar --> ")
     pos = encontrar_posicao(cod)
 
     if pos == -1:
-        print "Não existe aluno com esse código"
+        print "Não existe automovel com esse código"
         return
 
     # TODO: Confirmar eliminação
@@ -70,12 +91,12 @@ def eliminar_aluno():
 
 
     
-def alterar_aluno():
-    cod = input ("Código do aluno a alterar --> ")
+def alterar_Autos():
+    cod = input ("Código do automovel a alterar --> ")
     pos = encontrar_posicao(cod)
 
     if pos == -1:
-        print "Não existe aluno com esse código"
+        print "Não existe automovel com esse código"
         return
 
     # só altera o nome
@@ -91,18 +112,18 @@ def gerir():
     terminar = False
 
     while not terminar:
-        op = menu.alunos()
+        op = menu.automovel()
 
         if op == '1':
-            inserir_aluno()
+            inserir_Autos()
         elif op =='2':
-            listar_alunos()
+            listar_Autos()
         elif op == '3':
-            pesquisar_aluno()
+            pesquisar_Autos()
         elif op == '4':
-            alterar_aluno()
+            alterar_Autos()
         elif op == '5':
-            eliminar_aluno()
+            eliminar_Autos()
         elif op == '0':
             terminar = True
 

@@ -17,7 +17,7 @@ def ler_ficheiros():
 
 def escrever_ficheiros():
 	# adicionar todos ficheiros a guardar
-	util.escrever_ficheiro(fxAlunos, alunos.listaAlunos)
+	util.escrever_ficheiro(fxAutos, automoveis.listaAutos)
 
 
 
@@ -30,7 +30,7 @@ while not terminar:
     op = menu.principal()
     
     if op == '1':
-        alunos.gerir()
+        automoveis.gerir()
     elif op == '2':
         pass    #por fazer
     elif op == '0':
