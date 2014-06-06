@@ -12,12 +12,12 @@ fxClientes = "fxClientes.dat"
 def ler_ficheiros():
 	# adicionar todos ficheiros a ler
 	automoveis.listaAutos = util.ler_ficheiro(fxAutos)
-     #alunos.listaAlunos = util.ler_ficheiro(fxClientes)
+     clientes.listaClientes = util.ler_ficheiro(fxClientes)
 
 
 def escrever_ficheiros():
-	# adicionar todos ficheiros a guardar
-	util.escrever_ficheiro(fxAutos, automoveis.listaAutos)
+	util.escrever_ficheiros(fxclientes, clientes.listaclientes)
+1	util.escrever_ficheiro(fxAutos, automoveis.listaAutos)
 
 
 
@@ -32,7 +32,7 @@ while not terminar:
     if op == '1':
         automoveis.gerir()
     elif op == '2':
-        pass    #por fazer
+        clientes.gerir()    #por fazer
     elif op == '0':
         terminar = True
 
