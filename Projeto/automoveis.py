@@ -66,12 +66,15 @@ def pesquisar_Autos():
 
 def listar_Autos():
     for i in range (len(listaAutos)):
+        print "="*50
         print "Código: ", listaAutos[i].id
-        print "marca ", listaAutos[i].marca
-        print "modelo",listaAutos[i].modelo
+        print listaAutos[i].marca.upper(),
+        print listaAutos[i].modelo.upper(),
+        print "\t","matricula",listaAutos[i].matricula
+        print        
         print "cor",listaAutos[i].cor
         print "cilindrada",listaAutos[i].cilindrada
-        print "matricula",listaAutos[i].matricula
+
         print "ano_aquisicao",listaAutos[i].ano_aquisicao
         print "valor_aluguer_por_dia",listaAutos[i].valor_aluguer_por_dia
         

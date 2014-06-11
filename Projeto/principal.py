@@ -3,6 +3,7 @@
 import menu
 import automoveis
 import util
+import clientes
 
 
 # nome dos ficheiros
@@ -10,14 +11,14 @@ fxAutos = "fxAutos.dat"
 fxClientes = "fxClientes.dat"
 
 def ler_ficheiros():
-	# adicionar todos ficheiros a ler
-	automoveis.listaAutos = util.ler_ficheiro(fxAutos)
-     clientes.listaClientes = util.ler_ficheiro(fxClientes)
+    # adicionar todos ficheiros a ler
+    automoveis.listaAutos = util.ler_ficheiro(fxAutos)
+    clientes.listaClientes = util.ler_ficheiro(fxClientes)
 
 
 def escrever_ficheiros():
-	util.escrever_ficheiros(fxclientes, clientes.listaclientes)
-1	util.escrever_ficheiro(fxAutos, automoveis.listaAutos)
+	util.escrever_ficheiro(fxClientes, clientes.listaclientes)
+	util.escrever_ficheiro(fxAutos, automoveis.listaAutos)
 
 
 
