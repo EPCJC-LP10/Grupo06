@@ -6,6 +6,7 @@ def principal():
     print
     print "   1. Gestão de Automóveis"
     print "   2. Gestão de Clientes"
+    print "   3. Efetuar Aluguer"
     print 
     print "   0. Sair"
     print 

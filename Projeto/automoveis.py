@@ -5,7 +5,7 @@ from collections import namedtuple
 import menu
 
 
-AutomoveisReg = namedtuple("automovelReg", "id, marca, modelo, cor, cilindrada, ano_aquisicao, matricula, valor_aluguer_por_dia")
+AutomoveisReg = namedtuple("automovelReg", "id, marca, modelo, cor, cilindrada, ano_aquisicao, matricula, valor_aluguer_por_dia, alugado")
 listaAutos = []
 
 
@@ -37,10 +37,11 @@ def inserir_Autos():
     ano_aquisicao= raw_input("Qual o ano de aquisição?")
     matricula= raw_input("Qual a matricula?")
     valor_aluguer_por_dia= raw_input ("Qual o ano de aquisição?")
+    alugado = True
     
     
     
-    registo = AutomoveisReg(cod, marca, modelo, cor, cilindrada, ano_aquisicao, matricula, valor_aluguer_por_dia)
+    registo = AutomoveisReg(cod, marca, modelo, cor, cilindrada, ano_aquisicao, matricula, valor_aluguer_por_dia, alugado)
     listaAutos.append(registo)
 
 

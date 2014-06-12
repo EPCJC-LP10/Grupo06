@@ -33,7 +33,9 @@ while not terminar:
     if op == '1':
         automoveis.gerir()
     elif op == '2':
-        clientes.gerir()    #por fazer
+        clientes.gerir()
+    elif op == '3':
+        alugueres.registar()    #por fazer
     elif op == '0':
         terminar = True
 

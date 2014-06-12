@@ -5,8 +5,8 @@ from collections import namedtuple
 import menu
 
 
-AutomoveisReg = namedtuple("automovelReg", "id, marca, modelo, cor, cilindrada, ano_aquisicao, matricula, valor_aluguer_por_dia")
-listaAutos = []
+clienteReg = namedtuple("clienteReg", "id, marca, modelo, cor, cilindrada, ano_aquisicao, matricula, valor_aluguer_por_dia")
+listaClientes = []
 
 
 
