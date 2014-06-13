@@ -5,22 +5,22 @@ from collections import namedtuple
 import menu
 
 
-clienteReg = namedtuple("clienteReg", "id, marca, modelo, cor, cilindrada, ano_aquisicao, matricula, valor_aluguer_por_dia")
-listaClientes = []
+clienteReg = namedtuple("clienteReg", "id, nome, morada, bi, carta_de_conducao")
+listaclientes = []
 
 
 
 def encontrar_posicao(codigo):
     pos = -1
-    for i in range (len(listaAutos)):
-        if listaAutos[i].id == codigo:
+    for i in range (len(listaclientes)):
+        if listaclientes[i].id == codigo:
             pos = i
             break
                             
     return pos
 
 
-def inserir_Autos():
+def inserir_clientes():
     cod = input("Qual o id? ")
 
     pos = encontrar_posicao(cod)
@@ -30,68 +30,60 @@ def inserir_Autos():
         return
 
     #ler dados
-    marca= raw_input("Qual a marca?")
-    modelo= raw_input("Qual é o modelo")
-    cor= raw_input("Qual a cor?")
-    cilindrada= raw_input("Qual a cilindrada")
-    ano_aquisicao= raw_input("Qual o ano de aquisição?")
-    matricula= raw_input("Qual a matricula?")
-    valor_aluguer_por_dia= raw_input ("Qual o ano de aquisição?")
+    nome= raw_input("Qual é o nome?")
+    morada= raw_input("Qual a morada?")
+    bi= raw_input("Qual o bi")
+    carta_de_conducao= raw_input("Qual a carta de condução?")
     
     
     
-    registo = AutomoveisReg(cod, marca, modelo, cor, cilindrada, ano_aquisicao, matricula, valor_aluguer_por_dia)
-    listaAutos.append(registo)
+    
+    registo =clienteReg(cod, nome, morada, bi, carta_de_conducao)
+    listaclientes.append(registo)
 
 
-def pesquisar_Autos():
-    cod = input("Qual o id do automovel a pesquisar? ")
+def pesquisar_clientes():
+    cod = input("Qual o id do cliente a pesquisar? ")
 
     pos = encontrar_posicao(cod)
 
     if pos == -1:
-        print "Não existem automoveis com esse código"
+        print "Não existem clientes com esse código"
         return
 
-    print "Código: ", listaAutos[pos].id
-    print "marca ", listaAutos[pos].marca
-    print "modelo",listaAutos[pos].modelo
-    print "cor",listaAutos[pos].cor
-    print "cilindrada",listaAutos[pos].cilindrada
-    print "matricula",listaAutos[pos].matricula
-    print "ano_aquisicao",listaAutos[pos].ano_aquisicao
-    print "valor_aluguer_por_dia",listaAutos[pos].valor_aluguer_por_dia
+    print "Código", listaclientes[pos].id
+    print "nome", listaclientes[pos].nome
+    print "morada",listaclientes[pos].morada
+    print "bi",listaclientes[pos].bi
+    print "carta_de_conducao",listaclientes[pos].carta_de_conducao
     
 
 
-def listar_Autos():
-    for i in range (len(listaAutos)):
-        print "Código: ", listaAutos[i].id
-        print "marca ", listaAutos[i].marca
-        print "modelo",listaAutos[i].modelo
-        print "cor",listaAutos[i].cor
-        print "cilindrada",listaAutos[i].cilindrada
-        print "matricula",listaAutos[i].matricula
-        print "ano_aquisicao",listaAutos[i].ano_aquisicao
-        print "valor_aluguer_por_dia",listaAutos[i].valor_aluguer_por_dia
+def listar_clientes():
+    for i in range (len(listaclientes)):       
+        print "cod", listaclientes[i].id
+        print "nome", listaclientes[i].nome
+        print "morada",listaclientes[i].morada
+        print "bi",listaclientes[i].bi
+        print "carta_de_conducao",listaclientes[i].carta_de_conducao
         
         
   
 
-def eliminar_Autos():
-    cod = input ("Código do automovel a eliminar --> ")
+def eliminar_clientes():
+    cod = input ("Código do cliente a eliminar --> ")
     pos = encontrar_posicao(cod)
 
     if pos == -1:
-        print "Não existe automovel com esse código"
+        print "Não existem clientes com esse código"
         return
 
     # TODO: Confirmar eliminação
-    listaAutos.pop(pos)
+    listaclientes.pop(pos)
 
 
     
-def alterar_Autos():
+def alterar_clientes():
     cod = input ("Código do automovel a alterar --> ")
     pos = encontrar_posicao(cod)
 
@@ -101,7 +93,7 @@ def alterar_Autos():
 
     # só altera o nome
     novonome = raw_input("Qual o nome? ")
-    listaAutos[pos] = listaAutos[pos]._replace(nome=novonome)
+    lista.clientes[pos] = lista.clientes[pos]._replace(nome=novonome)
 
 
 
@@ -112,18 +104,18 @@ def gerir():
     terminar = False
 
     while not terminar:
-        op = menu.automovel()
+        op = menu.clientes()
 
         if op == '1':
-            inserir_Autos()
+            inserir_clientes()
         elif op =='2':
-            listar_Autos()
+            listar_clientes()
         elif op == '3':
-            pesquisar_Autos()
+            pesquisar_clientes()
         elif op == '4':
-            alterar_Autos()
+            alterar_clientes()
         elif op == '5':
-            eliminar_Autos()
+            eliminar_clientes()
         elif op == '0':
             terminar = True
 
