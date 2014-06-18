@@ -65,7 +65,97 @@ def listar_clientes():
         print "nome", listaclientes[i].nome
         print "morada",listaclientes[i].morada
         print "bi",listaclientes[i].bi
-        print "carta_de_conducao",listaclientes[i].carta_de_conducao
+        print "carta_de_conducao",listaclientes[i].cadef pesquisar_Autos():
+    cod = input("Qual o id do automovel a pesquisar? ")
+
+    pos = encontrar_posicao(cod)
+
+    if pos == -1:
+        print "Não existem automoveis com esse código"
+        return
+
+    print "Código: ", listaAutos[pos].id
+    print "marca ", listaAutos[pos].marca
+    print "modelo",listaAutos[pos].modelo
+    print "cor",listaAutos[pos].cor
+    print "cilindrada",listaAutos[pos].cilindrada
+    print "matricula",listaAutos[pos].matricula
+    print "ano_aquisicao",listaAutos[pos].ano_aquisicao
+    print "valor_aluguer_por_dia",listaAutos[pos].valor_aluguer_por_dia
+    
+
+
+def listar_Autos():
+    for i in range (len(listaAutos)):
+        print "="*50
+        print "Código: ", listaAutos[i].id
+        print listaAutos[i].marca.upper(),
+        print listaAutos[i].modelo.upper(),
+        print "\t","matricula",listaAutos[i].matricula
+        print        
+        print "cor",listaAutos[i].cor
+        print "cilindrada",listaAutos[i].cilindrada
+
+        print "ano_aquisicao",listaAutos[i].ano_aquisicao
+        print "valor_aluguer_por_dia",listaAutos[i].valor_aluguer_por_dia
+        
+        
+  
+
+def eliminar_Autos():
+    cod = input ("Código do automovel a eliminar --> ")
+    pos = encontrar_posicao(cod)
+
+    if pos == -1:
+        print "Não existe automovel com esse código"
+        return
+
+    # TODO: Confirmar eliminação
+    listaAutos.pop(pos)
+
+
+    
+def alterar_Autos():
+    cod = input ("Código do automovel a alterar --> ")
+    pos = encontrar_posicao(cod)
+
+    if pos == -1:
+        print "Não existe automovel com esse código"
+        return
+
+    # só altera o nome
+    novonome = raw_input("Qual o nome? ")
+    listaAutos[pos] = listaAutos[pos]._replace(nome=novonome)
+
+
+
+        
+
+def gerir():
+
+    terminar = False
+
+    while not terminar:
+        op = menu.automovel()
+
+        if op == '1':
+            inserir_Autos()
+        elif op =='2':
+            listar_Autos()
+        elif op == '3':
+            pesquisar_Autos()
+        elif op == '4':
+            alterar_Autos()
+        elif op == '5':
+            eliminar_Autos()
+        elif op == '0':
+            terminar = True
+
+
+
+
+if __name__ == "__main__":
+    print "Este programa não deve ser executado diretamente"rta_de_conducao
         
         
   
@@ -84,21 +174,21 @@ def eliminar_clientes():
 
     
 def alterar_clientes():
-    cod = input ("Código do automovel a alterar --> ")
+    cod = input ("Código do cliente a alterar --> ")
     pos = encontrar_posicao(cod)
 
     if pos == -1:
-        print "Não existe automovel com esse código"
+        print "Não existem clientes com esse código"
         return
 
     # só altera o nome
-    novonome = raw_input("Qual o nome? ")
-    lista.clientes[pos] = lista.clientes[pos]._replace(nome=novonome)
+    novonome = raw_input("Qual o nome?")
+    lista.clientes[pos]==lista.clientes[pos]_replace(nome=novonome)
 
 
 
         
-
+    
 def gerir():
 
     terminar = False
