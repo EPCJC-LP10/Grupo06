@@ -4,7 +4,7 @@ import menu
 import automoveis
 import util
 import clientes
-
+import alugueres
 
 # nome dos ficheiros
 fxAutos = "fxAutos.dat"
@@ -35,7 +35,7 @@ while not terminar:
     elif op == '2':
         clientes.gerir()
     elif op == '3':
-        alugueres.registar()    #por fazer
+        alugueres.gerir()    
     elif op == '0':
         terminar = True
 

@@ -20,7 +20,7 @@ def principal():
     return op
 
 
-def automovel():
+def Aluguer():
     print
     print " *** Menu Alugueres **** "
     print
